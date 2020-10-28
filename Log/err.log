@@ -1,0 +1,11 @@
+[ERROR 2020-10-13 20:40:51]This is error
+[ERROR 2020-10-14 17:37:50]This is error
+[ERROR 2020-10-26 13:14:39]This is error
+[ERROR 2020-10-26 13:32:47]This is error
+[ERROR 2020-10-28 09:27:22]脚本批量执行失败！`args` parameter expected to be a list or tuple of strings, got: 'D:\\apiTest_demo\\testCase\\zzj' (type: <class 'str'>)
+[ERROR 2020-10-28 15:19:12]报告生成失败，请重新执行name 'shell' is not defined
+[ERROR 2020-10-28 15:19:12]执行用例失败，请检查环境配置
+[ERROR 2020-10-28 15:20:01]报告生成失败，请重新执行name 'cmd' is not defined
+[ERROR 2020-10-28 15:20:01]执行用例失败，请检查环境配置
+[ERROR 2020-10-28 16:06:52]报告生成失败，请重新执行name 'subprocess' is not defined
+[ERROR 2020-10-28 16:07:02]执行用例失败，请检查环境配置
