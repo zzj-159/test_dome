@@ -1,0 +1,5 @@
+INFO     root:Log.py:78 [INFO 2020-10-28 15:35:01]==============================test_asarchRepayList_01_放款流水查询接口测试======================================
+INFO     root:Log.py:78 [INFO 2020-10-28 15:35:01]test_01_放款流水查询——测试开始——测试地址：http://10.100.12.15:8061/loanLog/list
+DEBUG    urllib3.connectionpool:connectionpool.py:205 Starting new HTTP connection (1): 10.100.12.15:8061
+DEBUG    urllib3.connectionpool:connectionpool.py:393 http://10.100.12.15:8061 "POST /loanLog/list HTTP/1.1" 200 None
+INFO     root:Log.py:78 [INFO 2020-10-28 15:35:01]测试返回报文{'code': 9999, 'result': None, 'message': '系统异常', 'success': False}

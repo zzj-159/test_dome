@@ -1,0 +1,39 @@
+INFO     root:Log.py:78 [INFO 2020-10-28 15:20:36]================================================测试开始test_03_querySecOrder_报文内容中为空为空字符串时接口给出正确的错误提示=====================================
+INFO     root:Log.py:78 [INFO 2020-10-28 15:20:36]测试开始:测试urlhttp://10.100.12.15:8061/loanLog/list----测试dody{}
+DEBUG    urllib3.connectionpool:connectionpool.py:205 Starting new HTTP connection (1): 10.100.12.15:8061
+DEBUG    urllib3.connectionpool:connectionpool.py:393 http://10.100.12.15:8061 "POST /loanLog/list HTTP/1.1" 200 None
+DEBUG    chardet.charsetprober:eucjpprober.py:62 EUC-JP Japanese prober hit error at byte 43
+DEBUG    chardet.charsetprober:mbcharsetprober.py:66 EUC-KR Korean prober hit error at byte 43
+DEBUG    chardet.charsetprober:mbcharsetprober.py:66 Big5 Chinese prober hit error at byte 46
+DEBUG    chardet.charsetprober:mbcharsetprober.py:66 EUC-TW Taiwan prober hit error at byte 40
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 utf-8  confidence = 0.938125
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 SHIFT_JIS Japanese confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:97 EUC-JP not active
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 GB2312 Chinese confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:97 EUC-KR not active
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 CP949 Korean confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:97 Big5 not active
+DEBUG    chardet.charsetprober:charsetgroupprober.py:97 EUC-TW not active
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 windows-1251 Russian confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 KOI8-R Russian confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 ISO-8859-5 Russian confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 MacCyrillic Russian confidence = 0.25598990785387277
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 IBM866 Russian confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 IBM855 Russian confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 ISO-8859-7 Greek confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 windows-1253 Greek confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 ISO-8859-5 Bulgairan confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 windows-1251 Bulgarian confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 TIS-620 Thai confidence = 0.14392848481446538
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 ISO-8859-9 Turkish confidence = 0.504706772363292
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 windows-1255 Hebrew confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 windows-1255 Hebrew confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 windows-1255 Hebrew confidence = 0.0
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 utf-8  confidence = 0.938125
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 SHIFT_JIS Japanese confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:97 EUC-JP not active
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 GB2312 Chinese confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:97 EUC-KR not active
+DEBUG    chardet.charsetprober:charsetgroupprober.py:100 CP949 Korean confidence = 0.01
+DEBUG    chardet.charsetprober:charsetgroupprober.py:97 Big5 not active
+DEBUG    chardet.charsetprober:charsetgroupprober.py:97 EUC-TW not active
