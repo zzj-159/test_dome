@@ -1,3 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="0" name="pytest" skipped="0" tests="3" time="0.791"><testcase classname="testCase.zzj.test_OrderInquiry" file="testCase\zzj\test_OrderInquiry.py" line="33" name="test_01_querySecOrder_正确报文获取最新的第二笔订单" time="0.083"></testcase><testcase classname="testCase.zzj.test_OrderInquiry" file="testCase\zzj\test_OrderInquiry.py" line="63" name="test_02_querySecOrder_获取内容失败" time="0.064"></testcase><testcase classname="testCase.zzj.test_OrderInquiry" file="testCase\zzj\test_OrderInquiry.py" line="93" name="test_03_querySecOrder_报文内容中为空为空字符串时接口给出正确的错误提示" time="0.070"><system-out>{&quot;code&quot;:9999,&quot;result&quot;:null,&quot;message&quot;:&quot;系统异常&quot;,&quot;success&quot;:false}
-9999
-</system-out></testcase></testsuite>
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="1" failures="1" name="pytest" skipped="0" tests="2" time="0.743"><testcase classname="testCase.zzj.test_OrderInquiry" file="testCase\zzj\test_OrderInquiry.py" line="33" name="test_01_querySecOrder_正确报文获取最新的第二笔订单" time="0.064"><failure message="json.decoder.JSONDecodeError: Expecting value: line 9 column 1 (char 8)">@allure.description(&quot;测试 /order/querySecOrder 接口用例&quot;)
+    @allure.testcase(&quot;/order/querySecOrder&quot;, &quot;测试用例地址 👇&quot;)
+    @pytest.mark.filterwarnings
+    def test_01_querySecOrder_正确报文获取最新的第二笔订单():
+        &quot;&quot;&quot;
+        获取完整的正确的最新的第二笔订单
+        :return:
+        &quot;&quot;&quot;
+        loger.info(
+            &quot;==============================test_asarchRepayList_01_放款流水查询接口测试======================================&quot;)
+        param = {
+            &quot;endDate&quot;: None,
+            &quot;startDate&quot;: None,
+            &quot;status&quot;: 6,
+            &quot;loanId&quot;: None,
+            &quot;page&quot;: 1,
+            &quot;pageSize&quot;: 10
+        }
+        # print(type(param))
+        param = json.dumps(param)  # 数据类型转换为json
+        loger.info(&quot;test_01_放款流水查询——测试开始——测试地址：%s&quot; % (url))
+        res = api_Re.post_Req(url=url, json=param, header=header)  # 调用request
+&gt;       a = res.json()  # 返回报文转json
+
+testCase\zzj\test_OrderInquiry.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+D:\python\lib\site-packages\requests\models.py:897: in json
+    return complexjson.loads(self.text, **kwargs)
+D:\python\lib\json\__init__.py:348: in loads
+    return _default_decoder.decode(s)
+D:\python\lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;json.decoder.JSONDecoder object at 0x0333FFB0&gt;
+s = &apos;\n\n\n\n\n\n\n\n&lt;!DOCTYPE HTML&gt;\n&lt;html lang=&quot;zh-cn&quot;&gt;\n&lt;head&gt;\n    &lt;meta charset=&quot;utf-8&quot;&gt;\n    &lt;meta http-equiv=&quot;X-UA-...ame下系统超时无法跳出iframe框架的问题\nif (window != top){\n    top.location.href = location.href;\n}\n&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n&apos;
+idx = 8
+
+    def raw_decode(self, s, idx=0):
+        &quot;&quot;&quot;Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        &quot;&quot;&quot;
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+&gt;           raise JSONDecodeError(&quot;Expecting value&quot;, s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 9 column 1 (char 8)
+
+D:\python\lib\json\decoder.py:355: JSONDecodeError</failure></testcase><testcase classname="pytest" name="internal" time="0.000"><error message="internal error">Traceback (most recent call last):
+  File &quot;D:\python\lib\site-packages\_pytest\main.py&quot;, line 205, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File &quot;D:\python\lib\site-packages\_pytest\main.py&quot;, line 249, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File &quot;D:\python\lib\site-packages\pluggy\hooks.py&quot;, line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+  File &quot;D:\python\lib\site-packages\pluggy\manager.py&quot;, line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+  File &quot;D:\python\lib\site-packages\pluggy\manager.py&quot;, line 87, in &lt;lambda&gt;
+    firstresult=hook.spec.opts.get(&quot;firstresult&quot;) if hook.spec else False,
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 208, in _multicall
+    return outcome.get_result()
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 80, in get_result
+    raise ex[1].with_traceback(ex[2])
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 187, in _multicall
+    res = hook_impl.function(*args)
+  File &quot;D:\python\lib\site-packages\_pytest\main.py&quot;, line 270, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File &quot;D:\python\lib\site-packages\pluggy\hooks.py&quot;, line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+  File &quot;D:\python\lib\site-packages\pluggy\manager.py&quot;, line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+  File &quot;D:\python\lib\site-packages\pluggy\manager.py&quot;, line 87, in &lt;lambda&gt;
+    firstresult=hook.spec.opts.get(&quot;firstresult&quot;) if hook.spec else False,
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 208, in _multicall
+    return outcome.get_result()
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 80, in get_result
+    raise ex[1].with_traceback(ex[2])
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 187, in _multicall
+    res = hook_impl.function(*args)
+  File &quot;D:\python\lib\site-packages\_pytest\runner.py&quot;, line 77, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File &quot;D:\python\lib\site-packages\_pytest\runner.py&quot;, line 92, in runtestprotocol
+    reports.append(call_and_report(item, &quot;call&quot;, log))
+  File &quot;D:\python\lib\site-packages\_pytest\runner.py&quot;, line 176, in call_and_report
+    hook.pytest_runtest_logreport(report=report)
+  File &quot;D:\python\lib\site-packages\pluggy\hooks.py&quot;, line 286, in __call__
+    return self._hookexec(self, self.get_hookimpls(), kwargs)
+  File &quot;D:\python\lib\site-packages\pluggy\manager.py&quot;, line 93, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+  File &quot;D:\python\lib\site-packages\pluggy\manager.py&quot;, line 87, in &lt;lambda&gt;
+    firstresult=hook.spec.opts.get(&quot;firstresult&quot;) if hook.spec else False,
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 208, in _multicall
+    return outcome.get_result()
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 80, in get_result
+    raise ex[1].with_traceback(ex[2])
+  File &quot;D:\python\lib\site-packages\pluggy\callers.py&quot;, line 187, in _multicall
+    res = hook_impl.function(*args)
+  File &quot;D:\python\lib\site-packages\_pytest\resultlog.py&quot;, line 83, in pytest_runtest_logreport
+    self.log_outcome(report, code, longrepr)
+  File &quot;D:\python\lib\site-packages\_pytest\resultlog.py&quot;, line 64, in log_outcome
+    self.write_log_entry(testpath, lettercode, longrepr)
+  File &quot;D:\python\lib\site-packages\_pytest\resultlog.py&quot;, line 58, in write_log_entry
+    print(&quot; %s&quot; % line, file=self.logfile)
+UnicodeEncodeError: &apos;gbk&apos; codec can&apos;t encode character &apos;\U0001f447&apos; in position 54: illegal multibyte sequence</error></testcase></testsuite>
