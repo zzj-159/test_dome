@@ -12,7 +12,7 @@ from common.getEnv import Environment
 from common.login import Login
 import allure
 import pytest
-
+import json
 
 port = '/order/isExistProcessingOrderByUserIdAndAcctNo'  # 接口后置
 conf = ReadConfig()
@@ -27,19 +27,19 @@ header = a.header  # 获取header
 # print(header)
 api_Re = API_Reponse()
 loger = MyLog
-import json
+
 
 
 @allure.description("测试 /order/isExistProcessingOrderByUserIdAndAcctNo 接口用例")
 @allure.testcase("/order/isExistProcessingOrderByUserIdAndAcctNo", "测试用例地址 👇")
 @pytest.mark.filterwarnings
-def test_01_isExistProcessing_根据用户与还款账号判断存在有未完成的订单():
+def test_01_OrderQuery_用户userId存在未完成订单_正确查询出相应的信息():
     """
-    根据用户与还款账号判断是否有未完成的订单
-    :return:
+    用户userId存在未完成订单_正确查询出相应的信息
+    :return:assert
     """
     loger.info(
-        "==============================test_01_isExistProcessingOrderByUserIdAndAcctNo_根据用户与还款账号判断是否有未完成的订单======================================")
+        "==============================test_01_用户存在未完成的订单，正确查询出相应的信息======================================")
     param = {
         "userId": None,
         "accountNo": None
@@ -54,3 +54,4 @@ def test_01_isExistProcessing_根据用户与还款账号判断存在有未完�
         assert a["result"] == 'true'  # 返回值断言
     except Environment as e:
         loger.info("判断结果异常： %s" % (e))
+
