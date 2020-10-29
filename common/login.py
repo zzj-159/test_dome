@@ -3,7 +3,6 @@
 # @Author  : yuhong.zhu
 # @Fuction : 登录，获取token
 import requests
-
 from common.getEnv import Environment
 from config.config import ReadConfig
 
@@ -43,9 +42,13 @@ if __name__ == '__main__':
     a = Login()
     header = a.header
     print(header)
-    url  = 'http://10.100.12.15:8061/loanLog/list'
-    param = {"endDate":None,"startDate":None,"status":6,"loanId":None,"page":1,"pageSize":10}
+    url  = 'http://10.100.0.125:8031/loanorder/order/queryOrderProductByUserId'
+    url = url+"?userId=010000003782"
+    param = {
+    }
+    print(param)
+    print(url)
     res = requests.post(url,json=param,headers=header)
-    assert res.status_code == 200
-    print(res.json())
+    # assert res.status_code == 200
+    print(res.text)
 

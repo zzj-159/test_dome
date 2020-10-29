@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 # @Time    : 2020/10/12
 # @Author  : yuhong.zhu
 # @Fuction : 读取接口的返回结果
@@ -53,10 +53,10 @@ class API_Reponse():
         else:
             return res
 
-    def post_Req(self, url, data=None, json=None, header=None):
+    def post_Req(self, url, data=None,json=None, header=None):
         # '''封装一个post方法，发送post请求'''
         try:  # 当处理不成功时，比如URL地址输入方式错误，或者接口超时timeout，需要抛出一个异常
-            res = requests.post(url, data=data, json=json, headers=header)  # 其中data是form表单形式的
+            res = requests.post(url, data=data,json=json, headers=header)  # 其中data是form表单形式的
         except TimeoutError:
             # 记录日志信息，放入logger里边，这样我们就能知道问题出在哪里
             logging.error('访问不成功')
